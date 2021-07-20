@@ -3,7 +3,7 @@
 
 ## Efficient Counting Shortest Cycles on Dynamic Graphs
 
-This work is to evaluate the shortest cycle counting through a vertex with 2-hop labeling. The files provide the implementation of our Bipartite-Conversion algorithm **HL-SCCnt** and edge insertion update algorithm **IncCNT**. For dynamic maintenance, minimality of index can be selected to be minimal or redundant. An example graph and its related files are provided, run "*sh run_script.sh*" to run the example.
+This work is to evaluate the shortest cycle counting through a vertex with 2-hop labeling. The files provide the implementation of our Bipartite-Conversion hub labeling algorithm and edge insertion/deletion update algorithm. An example graph and its related files are provided, run "*sh run_script.sh*" to run the examples.
 
 ****
 * Author: Qingshuai Feng
