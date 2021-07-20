@@ -17,7 +17,7 @@ This work is to evaluate the shortest cycle counting through a vertex with 2-hop
 |a|n.txt|original graph with number n|
 |b|n_bi.txt|bipartite conversion of original graph|
 |c|n_bi_lack.txt|bipartite conversion of original graph without inserted edges|
-|d|n_bi_inc.txt|inserted edges|
+|d|n_bi_inc.txt|inserted edges/deleted edges|
 ---
 ### label:	label files (for a,b,c above)
 ---
@@ -38,6 +38,8 @@ This work is to evaluate the shortest cycle counting through a vertex with 2-hop
 |III|n_bi_lack.txt|index contruction time and # of label entries for c|
 |IV|n_incEdgeCnt.txt|average update time and avg # of label entries of updated/renewed/inserted for d (redundancy)|
 |V|nm_incEdgeCnt.txt|average update time and avg # of label entries of updated/renewed/inserted for d (minimality)|
+|VI|n_dec_time.txt|update time for each deleted edge and the average update time|
+|VII|n_decEdgeCnt.txt|sizes of affected hubs set A and set B, number of label entries deleted/added for each deleted edge|
 ---
 ### answer: answers files (for 1,2,3,4,5)
 ---
@@ -53,6 +55,7 @@ This work is to evaluate the shortest cycle counting through a vertex with 2-hop
 |u_query.cc|query and edge insertion|
 |run_script.sh|script for running (four experiments per graph)|
 |Makefile|Makefile|
+|make_bipartite.py|python script for bipartite conversion|
 
 ## Execution: (Examples see run_script.sh)
 ### ./u_index:
@@ -62,6 +65,7 @@ This work is to evaluate the shortest cycle counting through a vertex with 2-hop
 |l|string|label_file|
 |b|n/y|bipartite_conversion|
 |o|degree/bidegree|ordering|
+|q|string|query file, if exist, run naive BFS|
 
 ### ./u_query:
 |Parameters|Type|Description|
@@ -69,6 +73,7 @@ This work is to evaluate the shortest cycle counting through a vertex with 2-hop
 |l|string|label_file|
 |q|string|query_folder|
 |a|string|answer_folder|
-|t|i/empty|enable dynamic update|
+|t|o/b/i/m/l/d|query and update mode type: o-original graph; b-bipartite graph; i:insert edge; m:insert edge with minimality; l:removed edge graph query; d:delete edge|
 |i|string|inserted_edges_file|
 |m|m/empty|enable minimality|
+|d|string|deleted_edges_file|
